@@ -1,0 +1,14 @@
+.head-section{
+    background-color: rgba(255, 255, 255, 0.2);
+}
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.preheader{
+    background-color: #0f7fd9;
+}
+.preheader .mailus{
+    color: rgba(255, 255, 255, 0.6);
+}
