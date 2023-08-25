@@ -1,0 +1,39 @@
+{
+   "menu": [
+    {
+        "id": 1,
+        "name": "Home",
+        "link": "/",
+        "isLink": true
+    },
+    {
+        "id": 2,
+        "name": "About",
+        "link": "/About",
+        "isLink": true
+    },
+    {
+        "id": 3,
+        "name": "Services",
+        "link": "/Services",
+        "isLink": true
+    },
+    {
+        "id": 4,
+        "name": "Career",
+        "isLink": false,
+        "submenu":[{"sub":"Job Application"},{"sub":"menu2"}] 
+    },
+    {
+        "id": 5,
+        "name": "Blogs",
+        "link": "/Blogs",
+        "isLink": true
+    },
+    {
+        "id": 6,
+        "name": "Contact",
+        "link": "/Contact",
+        "isLink": true
+    }    
+]}

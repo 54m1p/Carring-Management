@@ -1,5 +1,8 @@
 .head-section{
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: rgba(255, 255, 255, 0.3);
+    position: absolute;
+    z-index: 1;
+    width: 100%;
 }
 .header{
     display: flex;
@@ -11,4 +14,52 @@
 }
 .preheader .mailus{
     color: rgba(255, 255, 255, 0.6);
+} 
+.nav-bar{
+    display: flex;
+    text-decoration: none;
+    justify-content: right;
+}
+li{
+    list-style: none;
+}
+.main-menu{
+    text-decoration: none;
+    padding: 20px;
+    /* color: rgba(255, 255, 255, 1); */
+    font-size: 14px;
+}
+.head-link{
+    text-decoration: none;
+    color: rgba(255, 255, 255, 1);
+
+}
+.hoverMenu{
+    cursor: pointer;
+    position: relative;
+    color: rgba(255, 255, 255, 1);
+
+}
+.hoverMenu:hover .sub-nav{
+    visibility: visible;
+     transition: width 2s, height 4s;
+
+}
+.sub-nav{
+    visibility: hidden;
+    position:absolute;
+    left: -19px;
+    top: 42px;
+    border-radius: 15px;
+}
+.sub-nav li{
+    background-color: black;
+    color: white;
+    margin: bottom 10px;
+    padding: 10px;
+    /* border-radius: 8px; */
+}
+.sub-nav li:hover{
+    color:red;
+    cursor: pointer;
 }

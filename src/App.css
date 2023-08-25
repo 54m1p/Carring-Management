@@ -1,4 +1,9 @@
 .container{
-  width: 80%;
+  width: 70%;
   margin: 0 auto;
+}
+
+h2.subheading{
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.7);
 }

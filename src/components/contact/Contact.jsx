@@ -1,7 +1,13 @@
+import PreHeader from "../site-header/PreHeader"
+import SiteHeader from "../site-header/SiteHeader"
+
 const Contact =()=>{
     return(
         <div>
-            <p>Contact</p>
+            <div>
+            <PreHeader/>
+            <SiteHeader/>
+            </div>
         </div>
     )
 }

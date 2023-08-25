@@ -1,29 +1,43 @@
 import './header.css'
-import { NavLink } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './header.css'
+import {MdArrowDropDown} from 'react-icons/Md';
+import navMenu from '../../../json/navMenu.json';
+import { useCallback, useEffect, useState } from 'react';
+import img from '../../../images/logo_2.svg'
+
 const SiteHeader = () =>{
-    
+    const[isShown, setIsShown] = useState(false);
+    const mouseEnter = useCallback(()=> setIsShown(true), [])
+    const mouseLeave = useCallback(()=> setIsShown(false),[])
     return(
-        <div className="head-section">
-            <div className='container header'>
-                <span className="logo"><img src="https://www.carringmanagement.com.au/media/logo/logo_2.svg" alt="" /></span>
-                <ul className="site-head">
-                    <li><NavLink to={`/Home`}><span>Home</span></NavLink></li>
-                    <li><NavLink to={`/About`}><span>About</span> </NavLink></li>
-                    <li><NavLink to={`/Services`}><span>Services</span></NavLink></li>
-                    <li><NavLink to={`#`}><span>Career</span></NavLink></li>
-                    <li><NavLink to={`/Blog`}><span>Blog</span></NavLink></li>
-                    <li><NavLink to={`/Contact`}><span>Contact</span></NavLink></li>
-                    {/* <span>Home</span>
-                    <span>About</span>
-                    <span>Services</span>
-                    <span>Career</span>
-                    <span>Blog</span>
-                    <span>Contacts</span> */}
-                </ul>
-            </div>
-        </div>
-    )
-}
+         <div className="head-section">
+             <div className='container header'>
+                 <span className="logo"><img src={img} alt="" /></span>
+                 <ul className='nav-bar'>
+                 {navMenu.menu.map((menu) => (
+ 
+                     <>
+                     {menu.isLink === true ? 
+                     (<li className='main-menu'><Link to={menu.link} className='head-link'><span>{menu.name}</span></Link></li>) : 
+                     (<li className='main-menu hoverMenu' 
+                         onMouseEnter={mouseEnter}
+                         onMouseLeave={mouseLeave}>
+                         <span>{menu.name} <MdArrowDropDown/></span>
+                         
+                         <ul className='sub-nav '>
+                         {menu?.submenu.map((item) =>(
+                            <li>{item.sub}</li> 
+                         ))}
+                         </ul>
+                        </li>)}
+                     </>
+                     
+                 ))}
+             </ul>
+             </div>
+         </div>
+     )
+ }
 
 export default SiteHeader;   
